@@ -1,0 +1,29 @@
+{% include function-get-current-tab.html %}
+<header id="header" class="container clearfix">
+
+	<a href="/" id="logo">
+		<img src="{{ site.baseurl }}/img/logo.png" alt="SmartStart">
+	</a>
+
+	<nav id="main-nav">
+		
+		<ul>
+			{% for tab in site.data.tabs %}
+                <li class="{% if currentTab.url == tab.url %}current{% endif %} {% if tab.pills %}dropdown{% endif %}">
+                    <a href="{{ tab.url | prepend: site.baseurl }}" data-description="{{ pill.description }}">{{ tab.name }}</a>
+                    {% if tab.pills %}
+                    <ul>
+                        {% for pill in tab.pills %}
+                        <li>
+                            <a href="{{ pill.url | prepend: site.baseurl }}" data-description="{{ pill.description }}">{{ pill.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+		</ul>
+
+	</nav><!-- end #main-nav -->
+	
+</header><!-- end #header -->

@@ -1,0 +1,32 @@
+- name: Home
+  url: /
+  description: All starts here
+
+- name: About Us
+  url: /about
+  description: Who are we
+
+- name: Services
+  url: /services
+  description: What we do!
+
+- name: Locations
+  url: /locations
+  description: Where are we?
+  pills:
+  - name: Brighton Removals
+    url: /brighton-removals
+
+  - name: Worthing Removals
+    url: /worthing-removals
+
+  - name: Eastbourne Removals
+    url: /eastbourne-removals
+
+- name: Contact
+  description: Enquire here
+  url: /contact-us.html
+
+- name: Moving Tips
+  description: Help from the pros
+  url: /moving-tips.html
