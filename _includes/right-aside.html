@@ -1,0 +1,21 @@
+<aside id="sidebar">
+
+	<div class="widget">
+		<h6 class="widget-title">CATEGORIES</h6>
+		<ul class="categories">
+			{% for category in site.categories %}
+    			<li><a href="/categories/{{ category[0] }}/" style="text-decoration: none;">{% if category[0] == 'aws' %}{{ category[0] | upcase }}{% else %}{{ category[0] | capitalize }}{% endif %}</a></li>
+			{% endfor %}
+		</ul>
+	</div><!-- end .widget -->
+
+	<div class="widget">
+		<h6 class="widget-title">META</h6>
+		<ul class="categories">
+			<li><a rel="nofollow" href="http://www.dbmoves.co.uk/wp-login.php">Log in</a></li>
+			<li><a href="http://www.dbmoves.co.uk/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.dbmoves.co.uk/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+		</ul>
+	</div><!-- end .widget -->
+	
+</aside><!-- end #sidebar -->

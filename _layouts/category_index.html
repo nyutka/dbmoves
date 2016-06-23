@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<header class="page-header">
+	<h1>{{ page.title }}</h1>
+</header>
+
+<section id="main">
+	<article class="entry clearfix">
+	{% for post in site.categories[page.category] %}
+
+		<a href="{{ post.url | prepend:site.baseurl }}" title="{{ post.title }}">
+			<img src="{{ post.image }}" alt="" class="entry-image">
+		</a>
+		<div class="entry-body">
+			<a href="{{ post.url | prepend:site.baseurl }}">
+				<h1 class="title">{{ post.title }}</h1>
+			</a>
+			<p>{{ post.excerpt }}</p>
+		</div><!-- end .entry-body -->
+
+		<div class="entry-meta">
+			<ul>
+				<li><a href="{{ post.url | prepend:site.baseurl }}"><span class="post-format ">Permalink</span></a></li>
+				<li>
+					<span class="title">Posted:</span> 
+					<br>
+					<a href="{{ post.url | prepend:site.baseurl }}">{{ post.date | date: "%-d %B %Y" }}</a>
+				</li>
+			</ul>
+		</div><!-- end .entry-meta -->
+	{% endfor %}
+	</article>
+</section>
+
+{% include right-aside.html %}

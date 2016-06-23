@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<header class="page-header">
+	<h1 class="page-title">Moving Tips</h1>
+	<hr/>
+	<h2>Here you will find our foolproof guide to getting you and your belongings from A to B</h2>
+</header><!-- end .page-header -->
+
+<section id="main">
+	<article class="entry clearfix">
+		{% for post in paginator.posts %}
+		<a href="{{ post.url | prepend:site.baseurl }}" title="{{ post.title }}">
+			<img src="{{ post.image }}" alt="" class="entry-image">
+		</a>
+		<div class="entry-body">
+			<a href="{{ post.url | prepend:site.baseurl }}">
+				<h1 class="title">{{ post.title }}</h1>
+			</a>
+			<p>{{ post.excerpt }}</p>
+		</div><!-- end .entry-body -->
+
+		<div class="entry-meta">
+			<ul>
+				<li><a href="{{ post.url | prepend:site.baseurl }}"><span class="post-format ">Permalink</span></a></li>
+				<li>
+					<span class="title">Posted:</span> 
+					<br>
+					<a href="{{ post.url | prepend:site.baseurl }}">{{ post.date | date: "%-d %B %Y" }}</a>
+				</li>
+			</ul>
+		</div><!-- end .entry-meta -->
+		{% endfor %}
+	</article><!-- end .entry -->
+
+
+	<!-- Pagination links -->
+	{% if paginator.total_pages > 1 %}
+		<ul class="pagination">
+			{% if paginator.previous_page %}
+				<li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="prev">&larr; Prev</a></li>
+			{% else %}
+				<span>&larr; Prev</span>
+			{% endif %}
+
+			{% for page in (1..paginator.total_pages) %}
+				{% if page == paginator.page %}
+					<li class="current">{{ page }}</li>
+				{% elsif page == 1 %}
+					<li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+				{% else %}
+					<li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+				{% endif %}
+			{% endfor %}
+
+			{% if paginator.next_page %}
+				<li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="next">Next &rarr;</a></li>
+			{% else %}
+				<span>Next &rarr;</span>
+			{% endif %}
+		</ul>
+	{% endif %}
+</section><!-- end #main -->
+
+{% include right-aside.html %}
