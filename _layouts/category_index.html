@@ -8,7 +8,6 @@ layout: default
 <section id="main">
 	<article class="entry clearfix">
 	{% for post in site.categories[page.category] %}
-
 		<a href="{{ post.url | prepend:site.baseurl }}" title="{{ post.title }}">
 			<img src="{{ post.image }}" alt="" class="entry-image">
 		</a>
