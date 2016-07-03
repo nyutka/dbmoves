@@ -948,10 +948,10 @@ jQuery(document).ready(function($) {
 		if( $map.length ) {
 
 			$map.gMap({
-				address: 'Level 13, 2 Elizabeth St, Melbourne Victoria 3000 Australia',
+				address: '18 Margaret Street, Brighton, BN2 1TS',
 				zoom: 16,
 				markers: [
-					{ 'address' : 'Level 13, 2 Elizabeth St, Melbourne Victoria 3000 Australia' }
+					{ 'address' : '18 Margaret Street, Brighton, BN2 1TS' }
 				]
 			});
 
